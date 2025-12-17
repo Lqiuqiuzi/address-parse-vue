@@ -1,7 +1,7 @@
 {
-  "name": "address-parse",
+  "name": "address-parse-china",
   "version": "1.0.0",
-  "description": "中国收货地址智能解析 Vue 插件，支持 Vue 2/3",
+  "description": "中国收货地址智能解析，支持 Vue 2/3，解析姓名、手机、身份证、省市区",
   "main": "dist/address-parse.umd.js",
   "module": "dist/address-parse.esm.js",
   "types": "dist/index.d.ts",
@@ -9,6 +9,11 @@
     "dist",
     "src"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lqiuqiuzi/address-parse-vue.git"
+  },
+  "homepage": "https://lqiuqiuzi.github.io/address-parse-vue/",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -40,5 +45,8 @@
     "vue": {
       "optional": true
     }
+  },
+  "dependencies": {
+    "address-parse-china": "^1.0.0"
   }
 }
