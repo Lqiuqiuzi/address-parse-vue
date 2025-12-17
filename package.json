@@ -1,11 +1,18 @@
 {
   "name": "address-parse-china",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "中国收货地址智能解析，支持 Vue 2/3，解析姓名、手机、身份证、省市区",
   "main": "dist/address-parse.umd.js",
   "module": "dist/address-parse.esm.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/address-parse.esm.js",
+      "require": "./dist/address-parse.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "files": [
     "dist",
     "src"

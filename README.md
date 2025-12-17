@@ -1,18 +1,32 @@
-# Address Parse Vue
+# Address Parse China
 
-中国收货地址智能解析 Vue 插件，同时支持 Vue 2 和 Vue 3。
+[![npm version](https://img.shields.io/npm/v/address-parse-china.svg)](https://www.npmjs.com/package/address-parse-china)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+中国收货地址智能解析，支持 Vue 2/3 及原生 JavaScript。
+
+解析成功率 99% 以上，支持姓名、手机号、身份证号、邮编、省市区地址解析。
+
+## 在线演示
+
+👉 [https://lqiuqiuzi.github.io/address-parse-vue/](https://lqiuqiuzi.github.io/address-parse-vue/)
 
 ## 安装
 
 ```bash
-npm install address-parse
-# 或
-yarn add address-parse
-# 或
-pnpm add address-parse
+npm install address-parse-china
 ```
 
 ## 使用方法
+
+### 原生 JavaScript / ES Module
+
+```javascript
+import { AddressParse } from 'address-parse-china';
+
+const result = AddressParse.parse('张三 13812345678 北京市朝阳区建国路88号 100022');
+console.log(result);
+```
 
 ### Vue 3
 
@@ -20,10 +34,10 @@ pnpm add address-parse
 // main.js
 import { createApp } from 'vue';
 import App from './App.vue';
-import AddressParse from 'address-parse';
+import AddressParsePlugin from 'address-parse-china';
 
 const app = createApp(App);
-app.use(AddressParse);
+app.use(AddressParsePlugin);
 app.mount('#app');
 ```
 
@@ -40,34 +54,14 @@ const handleParse = () => {
 </script>
 ```
 
-或使用 Options API：
-
-```vue
-<script>
-export default {
-  methods: {
-    handleParse() {
-      const result = this.$addressParse('张三 13812345678 北京市朝阳区建国路88号');
-      console.log(result);
-    }
-  }
-}
-</script>
-```
-
 ### Vue 2
 
 ```javascript
 // main.js
 import Vue from 'vue';
-import App from './App.vue';
-import AddressParse from 'address-parse';
+import AddressParsePlugin from 'address-parse-china';
 
-Vue.use(AddressParse);
-
-new Vue({
-  render: h => h(App)
-}).$mount('#app');
+Vue.use(AddressParsePlugin);
 ```
 
 ```vue
@@ -80,25 +74,6 @@ export default {
     }
   }
 }
-</script>
-```
-
-### 直接导入使用（不依赖 Vue）
-
-```javascript
-import { AddressParse } from 'address-parse';
-
-const result = AddressParse.parse('张三 13812345678 北京市朝阳区建国路88号');
-console.log(result);
-```
-
-### CDN 使用
-
-```html
-<script src="https://unpkg.com/address-parse/dist/address-parse.umd.min.js"></script>
-<script>
-  const result = AddressParse.AddressParse.parse('张三 13812345678 北京市朝阳区建国路88号');
-  console.log(result);
 </script>
 ```
 
@@ -109,7 +84,7 @@ console.log(result);
   name: '张三',
   mobile: '13812345678',
   idCard: '',
-  zipCode: '',
+  zipCode: '100022',
   address: '北京市朝阳区建国路88号',
   province: { code: '110000', name: '北京市' },
   city: { code: '110100', name: '北京城区' },
@@ -131,6 +106,15 @@ console.log(result);
 北京市朝阳区xxx
 ```
 
+## 相关项目
+
+- [address-parse-java](https://github.com/Lqiuqiuzi/address-parse-java) - Java 版本
+
 ## 许可证
 
-MIT
+[MIT](LICENSE)
+
+## 联系方式
+
+**企鹅** 2177273545
+**卫星** l3885236283
